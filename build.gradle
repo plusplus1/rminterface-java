@@ -1,0 +1,28 @@
+group 'com.yqb.ice.prs'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.squareup.jnagmp/bouncycastle-rsa
+    compile group: 'com.squareup.jnagmp', name: 'bouncycastle-rsa', version: '2.1.0'
+
+    // https://mvnrepository.com/artifact/commons-codec/commons-codec
+    compile group: 'commons-codec', name: 'commons-codec', version: '1.11'
+
+    compile 'net.sf.json-lib:json-lib:2.4:jdk15'
+
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.2'
+
+    // https://mvnrepository.com/artifact/com.github.kevinsawicki/http-request/6.0
+    compile group: 'com.github.kevinsawicki', name: 'http-request', version: '6.0'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
