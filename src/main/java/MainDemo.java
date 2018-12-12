@@ -23,6 +23,8 @@ public class MainDemo {
                 "+MD1ct2+1I7D/t0gtqkCQGXexZj0lQj0+fqA5dpoWFJv0eZ1L0q6lWMVUhhdsx9t\n" +
                 "b8F3bu++OF2sKGiTs04IqiVdsbAJS4FiFncPAMNGpjA=\n" +
                 "-----END RSA PRIVATE KEY-----";
+
+
         // 构造请求参数
         ZrParamsBuilder builder = new ZrParamsBuilder(appId, zrPubKey, myPriKey); // 线上使用builder可以单例模式
 
@@ -33,6 +35,7 @@ public class MainDemo {
         params.put("phone", "189***05318");
 
         String bizMethod = "data.repay_assess.tax";
+
         Map<String, Object> strParams = builder.buildParams(bizMethod, params);
         System.out.println(strParams);
 
@@ -40,7 +43,7 @@ public class MainDemo {
         String urlBase = "http://xxx/xxx/xxx";
 
         // 发送请求
-        String respText = HttpRequest.post(urlBase, strParams, true).body();
+        String respText = HttpRequest.post(urlBase).form(strParams).body();
         System.out.println(respText);
 
         // 解析返回结果
