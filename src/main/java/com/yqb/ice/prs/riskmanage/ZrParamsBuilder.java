@@ -34,7 +34,6 @@ public class ZrParamsBuilder {
                 String uuid = UUID.randomUUID().toString().replace("-", "");
                 String reqId = st + uuid.substring(0, 6);
                 businessParams.put("req_id", reqId);
-
             }
         }
         String strBiz = JSONObject.fromObject(businessParams).toString();
