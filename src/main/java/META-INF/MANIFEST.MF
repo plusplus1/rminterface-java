@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Class-Path: commons-lang-2.5.jar http-request-6.0.jar bcprov-jdk15on-1
+ .50.jar gson-2.8.2.jar commons-codec-1.11.jar commons-beanutils-1.8.0
+ .jar json-lib-2.4-jdk15.jar commons-collections-3.2.1.jar commons-log
+ ging-1.1.1.jar jnagmp-2.1.0.jar jna-4.5.1.jar bouncycastle-rsa-2.1.0.
+ jar ezmorph-1.0.6.jar
+

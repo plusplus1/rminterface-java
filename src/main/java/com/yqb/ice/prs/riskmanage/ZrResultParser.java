@@ -57,15 +57,17 @@ public class ZrResultParser {
         result.signatureOk = true;
 
         if (result.code == 200) {
-            JSONObject resultDict = obj.getJSONObject("result_dict");
-            if (resultDict != null && resultDict.has("signature")) {
-                String data = resultDict.getString("data");
-                result.signatureOk = RSAUtil.verify(this.appId, data, resultDict.getString("signature"), this.zrPubKey);
-                if (result.signatureOk) {
-                    result.data = JSONObject.fromObject(RSAUtil.rsaDecrypt(data, this.myPriKey));
+            if (obj.has("result_dict")) {
+                JSONObject resultDict = obj.getJSONObject("result_dict");
+                if (resultDict != null && resultDict.has("signature")) {
+                    String data = resultDict.getString("data");
+                    result.signatureOk = RSAUtil.verify(this.appId, data, resultDict.getString("signature"), this.zrPubKey);
+                    if (result.signatureOk) {
+                        result.data = JSONObject.fromObject(RSAUtil.rsaDecrypt(data, this.myPriKey));
+                    }
+                } else {
+                    result.data = resultDict;
                 }
-            } else {
-                result.data = resultDict;
             }
         }
 

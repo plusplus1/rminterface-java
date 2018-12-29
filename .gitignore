@@ -1,6 +1,7 @@
 /out
 /gradle*
 .idea
+classes/
 interface.properties
 *.iml
 .gradle/
